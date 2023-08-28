@@ -1,9 +1,41 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Moogle Docs</title>
-  </head>
-  <body>
-    
-  </body>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edit Document</title>
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+  <header>
+    <input id="title" value="Untitled document" />
+    <button onclick="save();">Save document</button><br/>
+    <!-- Menu bar -->
+    <button>File</button>
+    <button>Edit</button>
+    <button>View</button>
+    <button>Insert</button>
+    <button>Format</button>
+    <button>Tools</button>
+    <button>Extensions</button>
+    <button>Help</button>
+    <br/>
+    <!-- Formatting bar -->
+    <button id="bold" onclick="bold();">B</button>
+    <button id="italic" onclick="italic();"><em>I</em></button>
+    <button id="underline" onclick="underline();" class="underline">U</button>
+    Color: <select id="tcolor" onchange="switchColor();">
+      <option value="black">black</option>
+      <option value="red">red</option>
+      <option value="orange">orange</option>
+      <option value="yellow">yellow</option>
+      <option value="green">green</option>
+      <option value="blue">blue</option>
+      <option value="purple">purple</option>
+    </select>
+  </header>
+  <div id="content" contenteditable>Enter document content here...</div>
+  <script src="/static/edit.js"></script>
+</body>
 </html>
