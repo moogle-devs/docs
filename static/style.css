@@ -1,1 +1,14 @@
+.underline {
+  text-decoration: underline;
+}
 
+header {
+  border-bottom: 1px solid black;
+  padding-bottom: 5px;
+}
+
+#togglemode {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+}
