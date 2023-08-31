@@ -2,16 +2,85 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Edit Document</title>
+  <link rel="stylesheet" href="/static/style.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
 <body>
-  <header>
+  <header id="menu">
     <input id="title" value="Untitled document" />
-    <button onclick="save();">Save document</button>
+    <button onclick="save();">Save document</button><br/>
+    <!-- Menu bar -->
+    <button>File</button>
+    <button>Edit</button>
+    <button>View</button>
+    <button>Insert</button>
+    <select id="format-bar" onchange="execFormatBar();">
+      <option value="format">Format</option>
+      <option value="text">Text</option>
+    </select>
+    <select id="tools-bar" onchange="execToolsBar();">
+      <option value="tools">Tools</option>
+      <option value="word-count">Word Count</option>
+      <option value="variables">Variables</option>
+    </select>
+    <button>Extensions</button>
+    <button>Help</button>
+    <br/>
+    <!-- Formatting bar -->
+    <button id="bold" onclick="bold();">B</button>
+    <button id="italic" onclick="italic();"><em>I</em></button>
+    <button id="underline" onclick="underline();" class="underline">U</button>
+    <button id="strikethrough" onclick="strikethrough()" class="strikethrough">S</button>
+    Text Color: <select id="tcolor" onchange="switchColor();">
+      <option value="black">Black</option>
+      <option value="red">Red</option>
+      <option value="orange">Orange</option>
+      <option value="yellow">Yellow</option>
+      <option value="green">Green</option>
+      <option value="blue">Blue</option>
+      <option value="purple">Purple</option>
+      <option value="white">White</option>
+    </select>
+    Font: <select id="font" onchange="switchFont();">
+      <option value="serif">serif</option>
+      <option value="sans-serif">sans-serif</option>
+      <option value="cursive">cursive</option>
+      <option value="monospace">monospace</option>
+    </select>
+    <select id="fsize" onchange="switchFontSize();">
+      <option value="8">8</option>
+      <option value="9">9</option>
+      <option value="10">10</option>
+      <option value="11">11</option>
+      <option value="12">12</option>
+      <option value="14">14</option>
+      <option value="18">18</option>
+      <option value="24">24</option>
+      <option value="30">30</option>
+      <option value="36">36</option>
+      <option value="48">48</option>
+      <option value="60">60</option>
+      <option value="72">72</option>
+      <option value="96">96</option>
+    </select>
+    Background Color: <select id="bcolor" onchange="switchBackgroundColor();">
+      <option value="white">White</option>
+      <option value="red">Red</option>
+      <option value="orange">Orange</option>
+      <option value="yellow">Yellow</option>
+      <option value="green">Green</option>
+      <option value="blue">Blue</option>
+      <option value="purple">Purple</option>
+      <option value="black">Black</option>
+    </select>
+    <select id="togglemode" onchange="toggleMode();">
+      <option value="edit">Editing mode</option>
+      <option value="view">Viewing mode</option>
+    </select>
   </header>
-  <textarea id="content"></textarea>
+  <div id="content" contenteditable>Enter document content here...</div>
   <script src="/static/edit.js"></script>
 </body>
 </html>
